@@ -1,11 +1,11 @@
-import conexao from "../../db.js";
+import conexao from "../config/db.js";
 
 export function listar(callback){
     const sql = "SELECT * FROM estudios ORDER BY id"
     conexao.query(sql, callback)
 }
 
-export function buscarPorId(id, callback) {
+export function listarPorId(id, callback) {
     const sql = "SELECT * FROM estudios WHERE id = ?"
     conexao.query(sql, [id], callback)
 }
@@ -18,7 +18,7 @@ export function criar(dados,callback) {
 export function atualizar(id, dados,callback) {
     const sql = "UPDATE estudios SET nome = ?, pais = ? WHERE id = ?"
     conexao.query(sql, [dados.nome, dados.pais, id], callback)
-    
+
 }
 
 export function excluir(id, callback) {

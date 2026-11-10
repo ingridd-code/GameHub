@@ -1,3 +1,4 @@
+
 function validarId(req, res, next) {
     const id = Number(req.params.id);
 
@@ -8,3 +9,5 @@ function validarId(req, res, next) {
     req.id = id;
     next();
 }
+
+export default validarId;
